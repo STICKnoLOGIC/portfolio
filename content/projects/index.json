@@ -1,0 +1,13 @@
+[
+    {
+        "title": "Sample Project",
+        "excerpt": "Description of Project 1",
+        "link": "https://example.com/project1",
+        "tags": ["tag1", "tag2"],
+        "cover": "https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg",
+        "featured": true,
+        "technologies": ["Tech1", "Tech2"],
+        "date": "2026-05-24",
+        "slug": "sample-project"
+    }
+]

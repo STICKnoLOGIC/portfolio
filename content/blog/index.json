@@ -1,0 +1,12 @@
+[
+    {
+        "slug": "hello-world",
+        "title": "Hello, World",
+        "excerpt": "My first blog, say Hello World!",
+        "date": "2026-05-24",
+        "tags": ["laravel","welcome", "introduction"],
+        "cover": "https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg",
+        "author": "STICKnologic",
+        "featured": true
+    }
+]
