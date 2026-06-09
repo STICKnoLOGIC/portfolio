@@ -1,15 +1,11 @@
 ---
-title: "Sample Project"
-excerpt: "Brief description of your project"
+title: Sample Project
+excerpt: Brief description of your project
 date: 2026-05-24
-tags: 
-    - tag 1
-    - tag 2
-    - tag 3
 featured: false
-image: "/images/project-thumbnail.jpg"
-link: "https://github.com/username/repo"
-demo: "https://demo-url.com"
+cover: https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg
+link: https://github.com/username/repo
+demo: https://demo-url.com
 technologies:
     - Tech1
     - Tech2

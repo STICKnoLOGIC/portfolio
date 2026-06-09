@@ -4,7 +4,7 @@ slug: realtime-delivery-dashboard
 excerpt: Building a scalable logistics monitoring platform.
 date: 2026-05-10
 featured: false
-cover: http://example.com/your/cover-image.jpg
+cover: https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg
 ---
 
 # Overview
