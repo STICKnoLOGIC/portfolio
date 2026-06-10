@@ -5,9 +5,9 @@ date: 2026-01-01
 artist: Your Name
 featured: false
 tags:
-	- artwork
-	- portfolio
-	- template
+  - artwork
+  - portfolio
+  - template
 cover: https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg
 ---
 
