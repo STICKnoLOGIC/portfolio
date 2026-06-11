@@ -3,6 +3,7 @@ name: STICKnoLOGIC
 excerpt: A STICK without LOGIC called STICKnoLOGIC
 links:
     - https://github.com/STICKnoLOGIC
+avatar: https://github.com/STICKnoLOGIC 
 ---
 
 Hi, I’m **John Aerial J. Azcune (STICKnoLOGIC)** — a web developer and pixel artist focused on building useful, creative, and open-source driven digital tools.

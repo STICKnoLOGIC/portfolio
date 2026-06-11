@@ -2,7 +2,7 @@
 title: Artwork Title
 slug: artwork-title
 date: 2026-01-01
-artist: Your Name
+author: Your Name
 featured: false
 tags:
   - artwork

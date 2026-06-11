@@ -3,6 +3,7 @@
         "title": "Artwork 1",
         "excerpt": "Description of artwork 1.",
         "date": "2026-05-24",
+        "author": "SICKnoLOGIC",
         "tags": ["artwork", "example"],
         "cover": "https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg",
         "slug": "sample-art"
