@@ -18,6 +18,8 @@ Route::view('/about', 'pages.about')->name('about');
 Route::view('/contact-us', 'pages.contact-us')->name('contact-us');
 Route::view('/write-with-us', 'pages.write-with-us')->name('write-with-us');
 
+Route::get('/health', function () { return response()->json(['status' => 'ok','timestamp' => now()]); });
+
 Route::get('/as-human', [AsHumanController::class, 'index'])->name('as-human');
 Route::get('/as-human/{slug}', [AsHumanController::class, 'show'])->name('as-human.show');
 
