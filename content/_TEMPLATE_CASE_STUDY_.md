@@ -4,6 +4,9 @@ slug: realtime-delivery-dashboard
 excerpt: Building a scalable logistics monitoring platform.
 date: 2026-05-10
 featured: false
+tags:
+  - tag 1
+  - tag 2
 cover: http://example.com/your/cover-image.jpg
 ---
 
