@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@import '@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '@fortawesome/fontawesome-free/css/solid.css';
+@import '@fortawesome/fontawesome-free/css/regular.css';
+@import '@fortawesome/fontawesome-free/css/brands.css';   
+
+:root {
+    --bg: #222222;
+    --surface: #333333;
+    --border: #c78500;
+
+    --primary: #d88f3c;
+    --secondary: #fac960;
+
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.bg-grid {
+    background-image:
+        linear-gradient(to right, var(--primary) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--primary) 1px, transparent 1px);
+
+    background-size: 80px 80px;
+}
+
+.pixel-border {
+    position: relative;
+    border: 2px solid var(--primary);
+}
+
+.pixel-border::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border: 2px solid var(--primary);
+    pointer-events: none;
+}
+
+.card-hover {
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50
+}
