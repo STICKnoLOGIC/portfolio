@@ -1,5 +1,6 @@
 ---
 title: My Title
+excerpt: Simple Sample Short Description
 slug: artwork-title
 date: 2026-01-01
 author: Your Name

@@ -2,10 +2,6 @@
 title: Project Title
 excerpt: Brief description of your project
 date: 2026-05-24
-tags: 
-    - tag 1
-    - tag 2
-    - tag 3
 slug: sample-project
 featured: false
 link: https://github.com/username/repo
