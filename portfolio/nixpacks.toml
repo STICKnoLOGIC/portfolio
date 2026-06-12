@@ -24,8 +24,6 @@ chmod -R 775 /app/storage /app/bootstrap/cache
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs /assets/nginx.template.conf /etc/nginx.conf
 
-nginx -t -c /etc/nginx.conf
-
 # Start supervisor
 supervisord -c /etc/supervisord.conf -n
 '''
@@ -138,7 +136,11 @@ http {
         listen [::]:${PORT};
         server_name localhost;
 
-        root /app;
+        $if(NIXPACKS_PHP_ROOT_DIR) (
+            root ${NIXPACKS_PHP_ROOT_DIR};
+        ) else (
+            root /app;
+        )
 
         add_header X-Content-Type-Options "nosniff";
 
@@ -148,9 +150,16 @@ http {
      
         charset utf-8;
      
-        location / {
-            try_files $uri $uri/ /index.php?$query_string;
-        }
+
+        $if(NIXPACKS_PHP_FALLBACK_PATH) (
+            location / {
+                try_files $uri $uri/ ${NIXPACKS_PHP_FALLBACK_PATH}?$query_string;
+            }
+        ) else (
+          location / {
+                try_files $uri $uri/ /index.php?$query_string;
+           }
+        )
      
         location = /favicon.ico { access_log off; log_not_found off; }
         location = /robots.txt  { access_log off; log_not_found off; }
