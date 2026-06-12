@@ -24,6 +24,9 @@ RUN composer install \
     --optimize-autoloader \
     --no-interaction
 
+RUN npm install \
+    && npm run build
+
 RUN mkdir -p storage bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
