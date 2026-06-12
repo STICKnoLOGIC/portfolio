@@ -10,11 +10,6 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-@import '@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '@fortawesome/fontawesome-free/css/solid.css';
-@import '@fortawesome/fontawesome-free/css/regular.css';
-@import '@fortawesome/fontawesome-free/css/brands.css';   
-
 :root {
     --bg: #222222;
     --surface: #333333;
