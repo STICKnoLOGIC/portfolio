@@ -24,9 +24,7 @@ chmod -R 775 /app/storage /app/bootstrap/cache
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs /assets/nginx.template.conf /etc/nginx.conf
 
-echo "===== GENERATED NGINX CONFIG ====="
-cat /etc/nginx.conf
-echo "===== END NGINX CONFIG ====="
+nginx -t -c /etc/nginx.conf
 
 # Start supervisor
 supervisord -c /etc/supervisord.conf -n
