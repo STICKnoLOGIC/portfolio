@@ -1,4 +1,4 @@
-FROM serversideup/php:8.3-unit
+FROM serversideup/php:8.4-unit
 
 USER root
 
