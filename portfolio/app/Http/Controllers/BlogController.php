@@ -26,7 +26,7 @@ class BlogController extends Controller
 
         return view('pages.blog.index', [
             'title' => 'Blog',
-            'posts' => $posts, 
+            'posts' => $posts,
         ]);
     }
 
@@ -45,7 +45,7 @@ class BlogController extends Controller
         })->values();
 
         return view('pages.blog.index', [
-            'title' => 'Posts tagged with "' . $tag . '"',
+            'title' => 'Posts tagged with "'.$tag.'"',
             'posts' => new LengthAwarePaginator(
                 $posts,
                 $posts->count(),
@@ -65,7 +65,7 @@ class BlogController extends Controller
     ) {
         $post = $content->find('blog', $slug);
 
-        if (!$post) {
+        if (! $post) {
             return view('pages.blog.show', []);
         }
 
@@ -113,12 +113,17 @@ class BlogController extends Controller
 
     public function author(ContentService $content, string $author)
     {
-        $all = collect($content->getCollection('blog'));
-        $author_result = $content->find('author', strtolower($author));
+        $lower_author = strtolower($author);
+        if($author !== $lower_author) {
+           return redirect()->route('blog.author',$lower_author, 301); 
+        }
         
-        if(!$author_result) {
+        $all = collect($content->getCollection('blog'));
+        $author_result = $content->find('author', $author);
+
+        if (! $author_result) {
             return view('pages.blog.author', [
-                'title' => 'Author not found'
+                'title' => 'Author not found',
             ]);
         }
 
@@ -127,7 +132,7 @@ class BlogController extends Controller
         })->values();
 
         return view('pages.blog.author', [
-            'title' => 'Meet "' . $author . '"!!',
+            'title' => 'Meet "'.$author.'"!!',
             'posts' => $posts,
             'author' => $author_result,
         ]);
