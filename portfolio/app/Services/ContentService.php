@@ -113,6 +113,7 @@ class ContentService
             'cover' => $document->matter('cover'),
             'avatar' => $document->matter('avatar'),
             'links' => $document->matter('links'),
+            'link' => $document->matter('link'),
             'author' => $document->matter('author'),
             'name' => $document->matter('name'),
             'html' => $converter->convert(
