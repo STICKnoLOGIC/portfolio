@@ -63,7 +63,7 @@ jobs:
             # Extract front matter using yq. 
             # --front-matter=extract isolates the YAML block.
             # -o=json converts it to JSON.
-            slug=$(yq --front-matter=extract -o=json '.slug' "$file" 2>/dev/null)
+            slug=$(yq --front-matter=extract -o=json '.slug' "$file")
 
             # If slug is null or empty, default to filename
             if [ -z "$slug" ] || [ "$slug" == "null" ]; then
