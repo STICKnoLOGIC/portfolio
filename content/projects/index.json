@@ -1,13 +1,18 @@
 [
-    {
-        "title": "Sample Project",
-        "excerpt": "Description of Project 1",
-        "link": "https://example.com/project1",
-        "tags": ["tag1", "tag2"],
-        "cover": "https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg",
-        "featured": true,
-        "technologies": ["Tech1", "Tech2"],
-        "date": "2026-05-24",
-        "slug": "sample-project"
-    }
+  {
+    "title": "First Accord",
+    "excerpt": "Make Your First Contribution in Github.",
+    "date": "2026-06-13",
+    "slug": "first-accord",
+    "featured": true,
+    "link": "https://github.com/sticknologic/first-accord",
+    "demo": "https://first-accord.js.org",
+    "cover": "https://raw.githubusercontent.com/STICKnoLOGIC/First-Accord/refs/heads/main/og_image.png",
+    "technologies": [
+      "Html",
+      "CSS",
+      "Javascript",
+      "FontAwesome"
+    ]
+  }
 ]
