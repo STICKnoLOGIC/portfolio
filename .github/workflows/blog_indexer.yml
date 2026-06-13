@@ -1,7 +1,7 @@
 name: Blog Indexer
 on:
   workflow_dispatch:
-    
+
   push:
     branches:
       - 'data'
@@ -89,7 +89,7 @@ jobs:
           echo "}" >> slugs.json
           
           # Optional: Pretty print the final JSON
-          cat slugs.json | jq '.' > temp.json && mv temp.json slugs.json
+          jq '.' slugs.json > temp.json && mv temp.json slugs.json
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
