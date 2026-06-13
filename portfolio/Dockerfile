@@ -34,6 +34,9 @@ RUN mkdir -p storage bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
+RUN chown -R www-data:www-data public \
+    && chmod -R 775 public
+
 COPY unit.json /docker-entrypoint.d/
 
 USER www-data
