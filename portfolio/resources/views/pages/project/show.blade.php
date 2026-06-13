@@ -18,11 +18,14 @@
                     title="{{ $project['title'] }}"
                     subtitle="{{ $project['excerpt'] }}"
                 />
-                @if($project['link'])
                     <div class="flex items-center gap-4 mt-4">
-                        <a href="{{ $project['link'] }}" target="_blank" class="bg-[var(--secondary)] text-gray-900 font-large   px-3 py-1 mb-4 rounded hover:bg-[var(--primary)]"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Project</a>
+                    @if($project['link'])
+                            <a href="{{ $project['link'] }}" target="_blank" class="bg-[var(--secondary)] text-gray-900 font-large   px-3 py-1 mb-4 rounded hover:bg-[var(--primary)]"><i class="fab fa-github"></i> View Source Code</a>
+                    @endif
+                    @if($project['demo'])
+                            <a href="{{ $project['demo'] }}" target="_blank" class="bg-[var(--secondary)] text-gray-900 font-large   px-3 py-1 mb-4 rounded hover:bg-[var(--primary)]"><i class="fa-solid fa-play"></i> View Demo</a>
+                    @endif
                     </div>
-                @endif
                 @if($project['technologies'] && count($project['technologies']))
                     <x-tags :tags="$project['technologies']" route="projects.technologies" />
                 @endif
