@@ -1,6 +1,6 @@
 <div class="card-hover p-0 border border-[var(--secondary)] rounded-lg shadow-sm clip-path-card transition">
     <a href="{{ route('case-studies.show', $caseStudy['slug']) }}">
-        <img lazyloadsrc="{{ $caseStudy['cover'] ?? env('DEFAULT_IMG') }}" alt="{{ $caseStudy['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
+        <img lazyload src="{{ $caseStudy['cover'] ?? env('DEFAULT_IMG') }}" alt="{{ $caseStudy['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
     </a>
     <div class="px-4 py-2"> 
     <a href="{{ route('case-studies.show', $caseStudy['slug']) }}" class="font-semibold hover:underline hover:underline-[var(--primary)] transition">
