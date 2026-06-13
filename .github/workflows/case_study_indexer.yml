@@ -1,4 +1,4 @@
-name: Blog Indexer
+name: Case Study Indexer
 on:
   workflow_dispatch:
     
@@ -6,7 +6,7 @@ on:
     branches:
       - 'data'
     paths:
-      - 'content/blog/*.md'
+      - 'content/case-study/*.md'
 
 jobs:
   modify-files:
@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate index file
         run: |
-          cd content/blog
+          cd content/case-study
           echo "[" > index.json
           first=true
           
@@ -54,7 +54,7 @@ jobs:
           
       - name: Generate slug file
         run: |
-          cd content/blog
+          cd content/case-study
            # Initialize an empty Bash array to hold JSON objects
           json_entries=()
 
@@ -92,7 +92,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          cd content/blog
+          cd content/case-study
           git add index.json slugs.json
           git commit -m "[BOT] Indexed files"
           # Use github.ref_name to push to the branch that triggered the action
