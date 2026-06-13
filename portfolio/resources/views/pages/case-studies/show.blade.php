@@ -19,7 +19,7 @@
                 subtitle="{{ $caseStudy['excerpt'] }}"
             />
             <p class="text-sm text-gray-500 mb-8">
-                By <a href="{{ route('blog.author', $caseStudy['author'] ?? 'sticknologic') }}" class="font-semibold text-[var(--secondary)] hover:text-orange-500 transition">{{ $caseStudy['author'] ?? 'Unknown' }}</a> | {{ \Carbon\Carbon::parse($caseStudy['date'])->format('F j, Y') }} | {{ read_time($caseStudy['html']) }} min read
+                By <a href="{{ route('blog.author', 'sticknologic') }}" class="font-semibold text-[var(--secondary)] hover:text-orange-500 transition">STICKnoLOGIC</a> | {{ \Carbon\Carbon::parse($caseStudy['date'])->format('F j, Y') }} | {{ read_time($caseStudy['html']) }} min read
             </p>
             @if($caseStudy['tags'] && count($caseStudy['tags']))
                 <x-tags :tags="$caseStudy['tags']" route="case-studies.tags" />

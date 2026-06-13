@@ -17,7 +17,7 @@
     </p>
 
     <a href="{{ route('blog.show', $post['slug']) }}" class="text-[var(--primary)] mt-3 inline-block">
-        Read more ->
+        Read more <i class="fas fa-arrow-right text-[var(--primary)] ml-2"></i>
     </a>
     </div>
 </div>
