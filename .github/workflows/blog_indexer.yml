@@ -1,7 +1,7 @@
 name: Blog Indexer
 on:
   workflow_dispatch:
-
+    
   push:
     branches:
       - 'data'
@@ -55,41 +55,39 @@ jobs:
       - name: Generate slug file
         run: |
           cd content/blog
-          echo "{" > slugs.json
-          first=true
-          
-          # Find all .md files. Adjust 'docs/' if your files are in a specific folder.
-          for file in $(find . -name "*.md" -not -path "./node_modules/*"); do
-            # Extract front matter using yq. 
-            # --front-matter=extract isolates the YAML block.
-            # -o=json converts it to JSON.
-            slug=$(yq --front-matter=extract -o=json '.slug' "$file")
+           # Initialize an empty Bash array to hold JSON objects
+          json_entries=()
 
-            # If slug is null or empty, default to filename
-            if [ -z "$slug" ] || [ "$slug" == "null" ]; then
-              # Get filename without path and extension
-              filename=$(basename "$file" .md)
-              slug="\"$filename\""
-            fi
+          # Find all .md files safely (handles spaces in filenames)
+          while IFS= read -r -d '' file; do
+            # Skip the output file itself
+            if [[ "$file" == "./slugs.json" ]]; then continue; fi
+            if [[ "$file" == "./index.json" ]]; then continue; fi
 
+            # Extract slug using yq with RAW output (-r) to avoid extra quotes
+            slug=$(yq --front-matter=extract -r '.slug' "$file" 2>/dev/null)
+
+            # Get filename without extension
             filename=$(basename "$file" .md)
 
-            
-            # Add comma separator if not the first item
-            if [ "$first" = true ]; then
-              first=false
-            else
-              echo "," >> slugs.json
+            # Fallback: If slug is empty or "null", use filename
+            if [ -z "$slug" ] || [ "$slug" == "null" ]; then
+              slug="$filename"
             fi
+
+            # Create a valid JSON key-value pair using jq
+            # This handles all escaping (quotes, special chars) automatically
+            # {($slug): $filename} creates a dynamic key
+            entry=$(jq -n --arg s "$slug" --arg f "$filename" '{($s): $f}')
             
-            # Append the JSON block
-            echo "\"$slug\":\"$filename\"" >> slugs.json
-          done
-          
-          echo "}" >> slugs.json
-          
-          # Optional: Pretty print the final JSON
-          jq '.' slugs.json > temp.json && mv temp.json slugs.json
+            # Add to array
+            json_entries+=("$entry")
+          done < <(find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*" -print0)
+
+          # Combine all entries into a single JSON object
+          # 'jq -s' slurps all inputs into an array, 'add' merges them into one object
+          printf '%s\n' "${json_entries[@]}" | jq -s 'add' > slugs.json
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
