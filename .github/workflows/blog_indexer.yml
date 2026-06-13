@@ -1,0 +1,101 @@
+name: Blog Indexer
+on:
+  workflow_dispatch:
+    
+  push:
+    branches:
+      - 'data'
+    paths:
+      - 'content/blog/*.md'
+
+jobs:
+  modify-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          fetch-depth: 1
+      
+      - name: Install yq
+        run: |
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+          sudo chmod +x /usr/bin/yq
+
+      - name: Generate index file
+        run: |
+          cd content/blog
+          echo "[" > index.json
+          first=true
+          
+          # Find all .md files. Adjust 'docs/' if your files are in a specific folder.
+          for file in $(find . -name "*.md" -not -path "./node_modules/*"); do
+            # Extract front matter using yq. 
+            # --front-matter=extract isolates the YAML block.
+            # -o=json converts it to JSON.
+            json_block=$(yq --front-matter=extract -o=json "$file")
+            
+            # Add comma separator if not the first item
+            if [ "$first" = true ]; then
+              first=false
+            else
+              echo "," >> index.json
+            fi
+            
+            # Append the JSON block
+            echo "$json_block" >> index.json
+          done
+          
+          echo "]" >> index.json
+          
+          # Optional: Pretty print the final JSON
+          cat index.json | jq '.' > temp.json && mv temp.json index.json
+          
+      - name: Generate slug file
+        run: |
+          cd content/blog
+          echo "{" > slugs.json
+          first=true
+          
+          # Find all .md files. Adjust 'docs/' if your files are in a specific folder.
+          for file in $(find . -name "*.md" -not -path "./node_modules/*"); do
+            # Extract front matter using yq. 
+            # --front-matter=extract isolates the YAML block.
+            # -o=json converts it to JSON.
+            slug=$(yq --front-matter=extract -o=json '.slug' "$file" 2>/dev/null)
+
+            # If slug is null or empty, default to filename
+            if [ -z "$slug" ] || [ "$slug" == "null" ]; then
+              # Get filename without path and extension
+              filename=$(basename "$file" .md)
+              slug="\"$filename\""
+            fi
+
+            filename=$(basename "$file" .md)
+
+            
+            # Add comma separator if not the first item
+            if [ "$first" = true ]; then
+              first=false
+            else
+              echo "," >> slugs.json
+            fi
+            
+            # Append the JSON block
+            echo "\"$slug\":\"$filename\"" >> slugs.json
+          done
+          
+          echo "}" >> slugs.json
+          
+          # Optional: Pretty print the final JSON
+          cat slugs.json | jq '.' > temp.json && mv temp.json slugs.json
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cd content/blog
+          git add index.json slugs.json
+          git commit -m "[BOT] Update files"
+          # Use github.ref_name to push to the branch that triggered the action
+          git push origin data
