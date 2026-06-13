@@ -1,5 +1,6 @@
 ---
 title: Hello, World
+slug: hello-world
 excerpt: My first web blog, say Hello World!
 date: 2026-05-24
 tags:

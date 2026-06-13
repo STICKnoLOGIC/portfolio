@@ -1,5 +1,6 @@
 ---
 title: Sample Project
+slug: sample-project
 excerpt: Brief description of your project
 date: 2026-05-24
 featured: false
