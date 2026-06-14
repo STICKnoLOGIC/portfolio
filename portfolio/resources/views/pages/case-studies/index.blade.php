@@ -7,7 +7,7 @@
         "name": "Case Studies - STICKnoLOGIC",
         "description": "Explore detailed case studies of my most significant projects, showcasing the challenges faced, solutions implemented, and valuable lessons learned throughout my career.",
         "url": "{{ env("APP_URL") . "/" . request()->path() }}",
-        "image": "{{ asset('images/case-studies-og.jpg') }}",
+        "image": "{{ asset("images/case-studies-og.jpg") }}",
         "mainEntity": {
             "@type": "ItemList",
             "itemListElement": {!! json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!} 

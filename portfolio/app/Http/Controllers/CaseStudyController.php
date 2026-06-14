@@ -12,20 +12,26 @@ class CaseStudyController extends Controller
             'case-study'
         );
 
-        $hasPart = $caseStudies->map(function ($caseStudy) {
+        $pos=0;
+        $hasPart = $caseStudies->map(function ($caseStudy) use (&$pos) {
+            $pos++;
             return [
-                "@type" => "CreativeWork",
-                "name" => $caseStudy['title'],
-                "description" => $caseStudy['excerpt'] ?? null,
-                "url" => route('case-studies.show', $caseStudy['slug']),
-                "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                "@type" => "ListItem",
+                "position" => $pos,
+                "item"  => [
+                    "@type" => "CreativeWork",
+                    "name" => $caseStudy['title'],
+                    "description" => $caseStudy['excerpt'] ?? null,
+                    "url" => route('case-studies.show', $caseStudy['slug']),
+                    "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                ]
             ];
         });
 
         return view('pages.case-studies.index', [
             'title' => 'Case Studies',
             'caseStudies' => $caseStudies,
-            'hasPart' => $hasPart,
+            'items' => $hasPart,
         ]);
     }
 
@@ -61,20 +67,26 @@ class CaseStudyController extends Controller
             return in_array($tag, $pTags, true);
         })->values();
 
-        $hasPart = $caseStudies->map(function ($caseStudy) {
+        $pos=0;
+        $hasPart = $caseStudies->map(function ($caseStudy) use (&$pos) {
+            $pos++;
             return [
-                "@type" => "CreativeWork",
-                "name" => $caseStudy['title'],
-                "description" => $caseStudy['excerpt'] ?? null,
-                "url" => route('case-studies.show', $caseStudy['slug']),
-                "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                "@type" => "ListItem",
+                "position" => $pos,
+                "item"  => [
+                    "@type" => "CreativeWork",
+                    "name" => $caseStudy['title'],
+                    "description" => $caseStudy['excerpt'] ?? null,
+                    "url" => route('case-studies.show', $caseStudy['slug']),
+                    "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                ]
             ];
         });
 
         return view('pages.case-studies.index', [
             'title' => 'Case Studies tagged with "' . $tag . '"',
             'caseStudies' => $caseStudies,
-            'hasPart' => $hasPart,
+            'items' => $hasPart,
         ]);
     }
     
