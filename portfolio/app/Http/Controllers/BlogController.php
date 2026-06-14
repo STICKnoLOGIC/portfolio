@@ -24,9 +24,20 @@ class BlogController extends Controller
             ]
         );
 
+        $items = $posts->map(function ($post) {
+            return [
+                "@type" => "BlogPosting",
+                "name" => $post['title'],
+                "url" => route('blog.show', $post['slug']),
+                "description" => $post['excerpt'] ?? null,
+                "image" => $post['cover'] ?? env('DEFAULT_IMG'),
+            ];
+        })->toArray();
+
         return view('pages.blog.index', [
             'title' => 'Blog',
             'posts' => $posts,
+            'items' => $items,
         ]);
     }
 
@@ -44,6 +55,16 @@ class BlogController extends Controller
             return in_array($tag, $pTags, true);
         })->values();
 
+        $items = $posts->map(function ($post) {
+            return [
+                "@type" => "BlogPosting",
+                "name" => $post['title'],
+                "url" => route('blog.show', $post['slug']),
+                "description" => $post['excerpt'] ?? null,
+                "image" => $post['cover'] ?? env('DEFAULT_IMG'),
+            ];
+        })->toArray();
+
         return view('pages.blog.index', [
             'title' => 'Posts tagged with "'.$tag.'"',
             'posts' => new LengthAwarePaginator(
@@ -56,6 +77,7 @@ class BlogController extends Controller
                     'query' => request()->query(),
                 ]
             ),
+            'items' => $items,
         ]);
     }
 

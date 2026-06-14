@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use League\CommonMark\CommonMarkConverter;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+use DonatelloZa\RakePlus\RakePlus;
 
 class ContentService
 {
@@ -102,7 +103,9 @@ class ContentService
         $document = YamlFrontMatter::parse($content);
 
         $converter = new CommonMarkConverter();
-
+        
+        $keywords = RakePlus::create(strip_tags($converter->convert($document->body())), 'en_US')->sortByScore('desc')->get();
+        
         return [
             'title' => $document->matter('title'),
             'slug' => $document->matter('slug'),
@@ -116,6 +119,8 @@ class ContentService
             'link' => $document->matter('link'),
             'demo' => $document->matter('demo'),
             'author' => $document->matter('author'),
+            'medium' => $document->matter('medium'),
+            'keywords' => $keywords? implode(', ', $keywords) : null,
             'name' => $document->matter('name'),
             'html' => $converter->convert(
                 $document->body()

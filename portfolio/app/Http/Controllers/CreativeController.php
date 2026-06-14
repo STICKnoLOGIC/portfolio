@@ -12,9 +12,21 @@ class CreativeController extends Controller
             'artworks'
         );
 
+        $pos=0;
+        $items = $artworks->map(function ($artwork) use (&$pos) {
+            $pos++;
+            return [
+                "@type" => "ListItem",
+                "position" => $pos,
+                "name" => $artwork['title'],
+                "url" => route('creative.show', $artwork['slug']),
+            ];
+        });
+
         return view('pages.creative.index', [
             'title' => 'Creative Work',
             'artworks' => $artworks,
+            'items' => $items,
         ]);
     }
 
@@ -50,9 +62,21 @@ class CreativeController extends Controller
             return in_array($tag, $pTags, true);
         })->values();
 
+        $pos=0;
+        $items = $artworks->map(function ($artwork) use (&$pos) {
+            $pos++;
+            return [
+                "@type" => "ListItem",
+                "position" => $pos, 
+                "name" => $artwork['title'],
+                "url" => route('creative.show', $artwork['slug']),
+            ];
+        });
+
         return view('pages.creative.index', [
             'title' => 'Creative Work tagged with "' . $tag . '"',
             'artworks' => $artworks,
+            'items' => $items,
         ]);
     }
 }

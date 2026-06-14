@@ -3,6 +3,10 @@ title: Artwork Title
 slug: artwork-title
 date: 2026-01-01
 author: Your Name
+medium:
+  - Aseprite
+  - Personal Computer
+  - PhotoShop
 featured: false
 tags:
   - artwork

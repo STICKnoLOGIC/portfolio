@@ -11,10 +11,21 @@ class ProjectController extends Controller
         $projects = $content->getCollection(
             'projects'
         );
+        $pos=0;
+        $items = $projects->map(function ($project) use (&$pos) {
+            $pos++;
+            return [
+                "@type" => "ListItem",
+                "position" => $pos,
+                "url" => route("projects.show", $project["slug"]),
+                "name" => $project["title"],
+            ];
+        })->toArray();
 
         return view('pages.project.index', [
             'title' => 'Projects',
             'projects' => $projects,
+            'items' => $items,
         ]);
     }
 
@@ -32,9 +43,22 @@ class ProjectController extends Controller
             return in_array($tech, $pTech, true);
         })->values();
 
+        $pos=0;
+
+        $items = $projects->map(function ($project) use (&$pos) {
+            $pos++;
+            return [
+                "@type" => "ListItem",
+                "position" => $pos,
+                "name" => $project["title"],
+                "url" => route("projects.show", $project["slug"]),
+            ];
+        })->toArray();
+
         return view('pages.project.index', [
             'title' => 'Projects using "' . $tech . '"',
             'projects' => $projects,
+            'items' => $items,
         ]);
     }
 

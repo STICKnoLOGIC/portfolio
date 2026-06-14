@@ -1,8 +1,17 @@
 <x-layouts.app title="{{ $title ?? 'Projects' }} - STICKnoLOGIC"
-    description="Here are some of my recent projects, showcasing a mix of web development, open-source contributions, and creative digital experiences. These projects reflect my passion for building practical tools, engaging web applications, and unique pixel art creations."
-    keywords="projects, web development, open-source, creative digital experiences, portfolio"
+    description="Here are some of my recent projects, showcasing a mix of my web development and open-source contributions experiences. These projects reflect my passion for building practical tools and engaging web applications."
+    keywords="STICKnoLOGIC, projects, web development, open-source, creative portfolio"
     author="STICKnoLOGIC"
-    image="{{ asset('images/projects-og.jpg') }}">
+    image="{{ asset('images/projects-og.jpg') }}"
+    jsonLd='"@type": "CollectionPage",
+        "name": "Projects - STICKnoLOGIC",
+        "description": "Here are some of my recent projects, showcasing a mix of web development, open-source contributions, and creative digital experiences. These projects reflect my passion for building practical tools and engaging web applications.",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "image": "{{ asset("images/projects-og.jpg") }}",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": {!! json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!} 
+        }'>
     <section class="max-w-6xl mx-auto p-6"> 
         <x-section-title :id=null
             title="Projects"

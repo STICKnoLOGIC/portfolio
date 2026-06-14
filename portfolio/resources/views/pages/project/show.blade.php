@@ -1,8 +1,21 @@
 <x-layouts.app title="{{ $title ?? 'Project Not Found' }} - STICKnoLOGIC"
     description="{{ $project['excerpt'] ?? 'Discover my projects, showcasing a mix of web development, open-source contributions, and creative digital experiences.' }}"
-    keywords="{{ $project['tags'] ? implode(', ', $project['tags']) : 'projects, web development, open-source, creative digital experiences' }}"
+    keywords="{{ $project['keywords'] ?? 'projects, web development, open-source, creative digital experiences' }}"
     author="STICKnoLOGIC"
-    image="{{ $project['cover'] ?? env('DEFAULT_IMG') }}">
+    image="{{ $project['cover'] ?? env('DEFAULT_IMG') }}"
+    jsonLd='"@type": "SoftwareApplication",
+        "name": "{{ $project["title"] }}",
+        "description": "{{ $project["excerpt"] }}",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "author": {
+            "@type": "Person",
+            "name": "STICKnoLOGIC",
+            "url": "{{ env("APP_URL")."/about" }}"
+        },
+        "screenshot": "{{ $project["cover"] ?? env("DEFAULT_IMG") }}"'>
+
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($project))
             <div class="text-center py-20">
@@ -18,7 +31,7 @@
                     title="{{ $project['title'] }}"
                     subtitle="{{ $project['excerpt'] }}"
                 />
-                    <div class="flex items-center gap-4 mt-4">
+                    <div class="flex flex-wrap items-center gap-1 sm:gap-4 mt-4">
                     @if($project['link'])
                             <a href="{{ $project['link'] }}" target="_blank" class="bg-[var(--secondary)] text-gray-900 font-large   px-3 py-1 mb-4 rounded hover:bg-[var(--primary)]"><i class="fab fa-github"></i> View Source Code</a>
                     @endif

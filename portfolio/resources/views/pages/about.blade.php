@@ -1,8 +1,34 @@
 <x-layouts.app title="About Me - STICKnoLOGIC"
     description="Hi, I'm John Aerial J. Azcune, also known as STICKnoLOGIC. I'm a web developer and pixel artist who focuses on building practical tools, creative web experiences, and open-source projects. Since starting my GitHub journey in 2020, I've been consistently exploring development through personal projects, game jams, and community contributions."
-    keywords="STICKnoLOGIC, John Aerial J. Azcune, web developer, pixel artist, open-source, projects, game jams, creativity, portfolio"
+    keywords="web development, digital art, pixel art, open source, Laravel, PHP, JavaScript, Aseprite, Photoshop, game jams, front-end, full-stack, GitHub, John Aerial J. Azcune, STICKnoLOGIC, is-a.dev, First Accord, Payus-as-a-Service, Aseprite Builder, snl-typed-js, laravel-ui-lockout, 1-Point-View-Perspective-Guide-Line"
     author="STICKnoLOGIC"
-    image="{{ asset('images/about-og.jpg') }}">
+    image="{{ asset('images/about-og.jpg') }}"
+    jsonLd='"@type": "ProfilePage",
+        "name": "John Aerial J. Azcune (STICKnoLOGIC) - Web Developer & Digital Artist",
+        "description": "Hi, I am John Aerial J. Azcune, also known as STICKnoLOGIC. I am a freelance web developer and digital artist who focuses on building practical tools, creative web experiences, and open-source projects.",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "image": "https://github.com/sticknologic.png",
+        "jobTitle": ["Website Developer", "Digital Artist"],
+        "knowsAbout": [
+            "Web Development",
+            "JavaScript",
+            "PHP",
+            "Laravel",
+            "Pixel Art",
+            "Sprite Animation",
+            "Digital Illustration"
+        ],
+        "sameAs": [
+            "https://github.com/sticknologic",
+            "https://www.reddit.com/user/sticknologic",
+            "https://x.com/sticknologic",
+            "https://facebook.com/sticknologic",
+            "https://youtube.com/@sticknologic",
+            "https://instagram.com/sticknologic",
+            "https://bsky.app/profile/sticknologic.is-a.dev",
+            "https://sticknologic.itch.io",
+            "https://www.linkedin.com/in/sticknologic"
+        ]'>
 
     <section class="max-w-6xl mx-auto px-6 py-24">
         <div class="flex gap-0 flex-wrap center justify-center mb-12">
