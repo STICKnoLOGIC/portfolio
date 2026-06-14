@@ -1,8 +1,13 @@
 <x-layouts.app title="STICKnoLOGIC - Dev Portfolio" 
-    description="Welcome to my personal portfolio website! I'm STICKnoLOGIC, a passionate web developer and digital creator. Here you'll find a showcase of my projects, blog posts, and creative works. I specialize in building modern, responsive websites and applications using the latest technologies. Feel free to explore my work and get in touch if you'd like to collaborate or just say hello!" 
-    keywords="STICKnoLOGIC, portfolio, web developer, projects, blog, creative work, digital creator, responsive design, modern web development" 
-    author="STICKnoLOGIC">
-
+    description="Welcome to my Developer portfolio website! I'm STICKnoLOGIC, a passionate web developer and digital creator." 
+    keywords="STICKnoLOGIC, portfolio, web developer, projects, blog, creative work, digital art, responsive design, modern web development, Web Developer" 
+    author="STICKnoLOGIC"
+    image="{{ asset('images/og-home.png') }}"
+    jsonLd='"@type": "WebPage",
+        "name": "STICKnoLOGIC - Dev Portfolio",
+        "description": "Welcome to my Developer portfolio website! I am STICKnoLOGIC, a passionate web developer and digital creator.",
+        "url": "{{ env("APP_URL") }}"'>
+    
     <x-hero />
 
     <section class="max-w-6xl mx-auto px-6 py-24">

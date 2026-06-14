@@ -2,7 +2,16 @@
     description="Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity."
     keywords="creative work, pixel art, digital illustrations, game assets, character designs, experimental art, portfolio"
     author="STICKnoLOGIC"
-    image="{{ asset('images/creative-og.jpg') }}">
+    image="{{ asset('images/creative-og.jpg') }}"
+    jsonLd='"@type": "CollectionPage",
+        "name": "Creative Work - STICKnoLOGIC",
+        "description": "Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity.",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "image": "{{ asset("images/creative-og.jpg") }}",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": {!! json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!} 
+        }'>
 
     <section class="max-w-6xl mx-auto p-6">
 

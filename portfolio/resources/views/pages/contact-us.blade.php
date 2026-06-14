@@ -2,7 +2,11 @@
     description="Have questions, feedback, or just want to say hello? We'd love to hear from you! Whether you're interested in collaborating, have a suggestion for our content, or simply want to connect, feel free to reach out. Your thoughts and inquiries are always welcome!" 
     keywords="contact, email, social media, feedback, questions, collaboration" 
     author="STICKnoLOGIC" 
-    image="https://github.com/STICKnoLOGIC/STICKnoLOGIC/blob/main/static/contact.webp?raw=true">
+    image="https://github.com/STICKnoLOGIC/STICKnoLOGIC/blob/main/static/contact.webp?raw=true"
+    jsonLd='"@type": "WebPage",
+        "name": "Contact Us - STICKnoLOGIC",
+        "description": "Have questions, feedback, or just want to say hello? We would love to hear from you! Whether you are interested in collaborating, have a suggestion for our content, or simply want to connect, feel free to reach out. Your thoughts and inquiries are always welcome!",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}"'>
     <section class="max-w-6xl mx-auto mb-4 p-6">
         <x-section-title :id=null
             title="Contact Us"
