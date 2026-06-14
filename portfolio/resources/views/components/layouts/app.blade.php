@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('images/favicon-192x192.png') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon-appletouch.png') }}" />
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}" />
-    <link rel="canonical" href="{{ env('APP_URL') . '/' . request()->path() }}" />
+    <link rel="canonical" href="{{ env('APP_URL') . (empty(request()->path()) ? '' : '/' . request()->path()) }}" />
     <title>{!! $title ?? env('APP_NAME','STICKnoLOGIC') !!}</title>
 
     {{-- meta tags --}}
@@ -25,7 +25,7 @@
 
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ env('APP_URL') . '/' . request()->path() }}"/>
+    <meta property="og:url" content="{{ env('APP_URL') . (empty(request()->path()) ? '' : '/' . request()->path()) }}"/>
     <meta property="og:title" content="{!! $title ?? env('APP_NAME','STICKnoLOGIC') !!}"/>
     <meta property="og:description" content="{{ $description ?? 'STICKnoLOGIC - Portfolio' }}"/>
     <meta property="og:image" content="{{ $image ?? asset('images/og-image.png') }}"/>
@@ -33,7 +33,7 @@
     {{-- Twitter --}}
     <meta name="twitter:card" content="summary_large_image"/>
     <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content="{{ env('APP_URL') . '/' . request()->path() }}"/>
+    <meta property="twitter:url" content="{{ env('APP_URL') . (empty(request()->path()) ? '' : '/' . request()->path()) }}"/>
     <meta property="twitter:title" content="{!! $title ?? env('APP_NAME','STICKnoLOGIC') !!}"/>
     <meta property="twitter:description" content="{{ $description ?? 'STICKnoLOGIC - Portfolio' }}"/>
     <meta property="twitter:image" content="{{ $image ?? asset('images/og-image.png') }}"/>
