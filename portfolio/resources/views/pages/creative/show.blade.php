@@ -1,8 +1,21 @@
 <x-layouts.app title="{{ $artwork['title'] ?? 'Artwork Not Found' }} - STICKnoLOGIC"
     description="{{ $artwork['excerpt'] ?? 'Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity.' }}"
-    keywords="{{ $artwork['tags'] ? implode(', ', $artwork['tags']) : 'creative work, pixel art, digital illustrations, game assets, character designs, experimental art, portfolio' }}"
+    keywords="{{ $artwork['keywords'] ?? 'creative work, pixel art, digital illustrations, game assets, character designs, experimental art, portfolio' }}"
     author="STICKnoLOGIC"
-    image="{{ $artwork['cover'] ?? env('DEFAULT_IMG') }}">
+    image="{{ $artwork['cover'] ?? env('DEFAULT_IMG') }}"
+    jsonLd='"@type": "CreativeWork",
+        "name": "{{ $artwork["title"] ?? "Creative Work - STICKnoLOGIC"}}",
+        "description": "{{ $artwork["excerpt"] }}",
+        "image": "{{ $artwork["cover"] ?? env("DEFAULT_IMG") }}",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "dateCreated": "{{ $artwork["date"] }}",
+        "artist": {
+            "@type": "Person",
+            "name": "STICKnoLOGIC",
+            "url": "{{ env("APP_URL")."/about" }}"
+        },
+        "artMedium": "{{ implode(", ", $artwork["medium"] ?? []) }}",
+        "keywords": {!! json_encode($artwork["tags"], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) !!}'>
     <section class="max-w-6xl mx-auto px-6 py-24">
     @if(empty($artwork))
             <div class="text-center py-20">

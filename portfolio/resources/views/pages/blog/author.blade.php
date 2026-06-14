@@ -1,7 +1,14 @@
 <x-layouts.app title="Author - {{ $title ?? 'Author Not Found' }}" 
     description="{{ $author['excerpt'] ?? 'Discover the profile of ' . ($author['name'] ?? 'this author') . ', including their biography, social media links, and a collection of their blog posts. Learn more about the person behind the words and explore their contributions to the world of blogging.' }}" 
-    keywords="author, profile, biography, social media, blog posts, {{ $author['name'] ?? 'author' }}" 
-    author="{{ $author['name'] ?? 'Unknown Author' }}">
+    keywords="{{ $author['keywords'] ?? 'author, profile, biography, social media, blog posts, ' . ($author['name'] ?? 'author') }}" 
+    author="{{ $author['name'] ?? 'Unknown Author' }}"
+    image="{{ $author['avatar'] ?? env('DEFAULT_IMG') }}"
+    jsonLd='"@type": "ProfilePage",
+        "name": "{{ $author["name"] ?? "Unknown Author" }}",
+        "description": "{{ $author["excerpt"] ?? "Discover the profile of " . ($author["name"] ?? "this author") . ", including their biography, social media links, and a collection of their blog posts. Learn more about the person behind the words and explore their contributions to the world of blogging." }}",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "image": "{{ $author["avatar"] ?? env("DEFAULT_IMG") }}",
+        "sameAs": {!!  json_encode($author["links"] ?? [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}'>
     <div class="max-w-7xl mx-auto px-4 py-16">
         @if(empty($author))
             <div class="text-center py-20">

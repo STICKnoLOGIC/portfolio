@@ -1,8 +1,28 @@
 <x-layouts.app title="{{ $title ?? 'Blog Post' }} - {{ $post['author'] ?? 'Unknown Author' }}"
     description="{{ $post['excerpt'] ?? 'Read this insightful blog post on design, development, and creativity. Explore the latest trends and tips in tech, programming, and web development.' }}"
-    keywords="{{ $post['tags'] ? implode(', ', $post['tags']) : 'blog post, design, development, creativity, tech, programming, web development, software engineering' }}"
+    keywords="{{ $post['keywords'] ?? 'blog post, design, development, creativity, tech, programming, web development, software engineering' }}"
     author="{{ $post['author'] ?? 'Unknown Author' }}"
-    image="{{ $post['cover'] ?? env('DEFAULT_IMG') }}">
+    image="{{ $post['cover'] ?? env('DEFAULT_IMG') }}"
+    jsonLd='"@type": "BlogPosting",
+        "headline": "{{ $post["title"] }}",
+        "description": "{{ $post["excerpt"] }}",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",    
+        "image": "{{ $post["cover"] ?? env("DEFAULT_IMG") }}",
+        "datePublished": "{{ \Carbon\Carbon::parse($post["date"])->toIso8601String() ?? now()->toIso8601String() }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ $post["author"] ?? "STICKnoLOGIC" }}",
+            "url": "{{ route("blog.author", $post["author"] ?? "sticknologic") }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "STICKnoLOGIC",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ asset("images/logo.png") }}"
+            }
+        }'>
+
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($post))
             <div class="text-center py-20">
