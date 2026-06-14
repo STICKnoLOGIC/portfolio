@@ -1,8 +1,17 @@
-<x-layouts.app title="STICKnoLOGIC - as a Human" 
+<x-layouts.app title="As A Human - My Thoughts & Literature" 
     description="Sharing my thoughts, experiences, and insights on various topics that matter to me. From personal growth and mental health to technology and creativity, this is where I express myself as a human being." 
     keywords="as a human, thoughts, experiences, insights, personal growth, mental health, technology, creativity" 
     author="STICKnoLOGIC" 
-    image="{{ asset('images/as-human-og.jpg') }}">
+    image="{{ asset('images/as-human-og.jpg') }}"
+    jsonLd='"@type": "CollectionPage",
+        "name": "As A Human - My Thoughts & Literature",
+        "description": "Sharing my thoughts, experiences, and insights on various topics that matter to me.",
+        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "List of Writings",
+            "itemListElement": {!! json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        }'>
 
     <section class="max-w-6xl mx-auto mb-4 p-6">
         <x-section-title :id=null

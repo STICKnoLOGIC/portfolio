@@ -1,4 +1,4 @@
-<x-layouts.app title="{{ $title ?? 'Creative Work' }} - STICKnoLOGIC"
+<x-layouts.app title="Creative Work - STICKnoLOGIC"
     description="Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity."
     keywords="creative work, pixel art, digital illustrations, game assets, character designs, experimental art, portfolio"
     author="STICKnoLOGIC"
@@ -30,4 +30,4 @@
             @endif
         </div>
     </section>
-    </x-layouts.app>
+</x-layouts.app>

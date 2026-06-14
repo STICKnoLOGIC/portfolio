@@ -13,6 +13,10 @@
             "@type": "Person",
             "name": "STICKnoLOGIC",
             "url": "{{ env("APP_URL")."/about" }}"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ env("APP_URL") . "/" . $caseStudy["slug"] }}"
         }'>
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($caseStudy))

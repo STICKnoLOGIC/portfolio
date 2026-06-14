@@ -1,8 +1,30 @@
 <x-layouts.app title="As A Human - {{ $thought['title'] ?? 'Thought Not Found' }}" 
     description="{{$thought['excerpt'] ?? 'Sharing my thoughts, experiences, and insights on various topics that matter to me. From personal growth and mental health to technology and creativity, this is where I express myself as a human being.' }}"
-    keywords="{{ }}" 
+    keywords="{{ $thought['keywords'] ?? 'as a human, thoughts, experiences, insights, personal growth, mental health, technology, creativity' }}" 
     author="STICKnoLOGIC" 
-    image="{{ asset('images/as-human-og.jpg') }}">
+    image="{{ asset('images/as-human-og.jpg') }}"
+    jsonLd='"@type": "BlogPosting", 
+        "headline": "{{ $thought["title"] }}",
+        "description": "{{ $thought["excerpt"] }}",
+        "image": "{{ $thought["cover"] ?? env("DEFAULT_IMG") }}",
+        "datePublished": "{{ \Carbon\Carbon::parse($thought["date"])->toIso8601String() }}",
+        "author": {
+            "@type": "Person",
+            "name": "STICKnoLOGIC",
+            "url": "{{ env("APP_URL") ."/about" }}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "STICKnoLOGIC",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "{{ asset("images/logo.png") }}"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ env("APP_URL") . "/" . request()->path() }}"
+        }'>
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($thought) || !$thought)
             <div class="text-center py-20">
