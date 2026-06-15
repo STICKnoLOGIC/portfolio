@@ -6,7 +6,7 @@
     jsonLd='"@type": "WebPage",
         "name": "Contact Us - STICKnoLOGIC",
         "description": "Have questions, feedback, or just want to say hello? We would love to hear from you! Whether you are interested in collaborating, have a suggestion for our content, or simply want to connect, feel free to reach out. Your thoughts and inquiries are always welcome!",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}"'>
+        "url": "{{ config("app.url") . "/" . request()->path() }}"'>
     <section class="max-w-6xl mx-auto mb-4 p-6">
         <x-section-title :id=null
             title="Contact Us"

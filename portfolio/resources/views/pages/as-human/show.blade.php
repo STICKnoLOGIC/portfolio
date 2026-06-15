@@ -6,12 +6,12 @@
     jsonLd='"@type": "BlogPosting", 
         "headline": "{{ $thought["title"] }}",
         "description": "{{ $thought["excerpt"] }}",
-        "image": "{{ $thought["cover"] ?? env("DEFAULT_IMG") }}",
+        "image": "{{ $thought["cover"] ?? config("app.default_img") }}",
         "datePublished": "{{ \Carbon\Carbon::parse($thought["date"])->toIso8601String() }}",
         "author": {
             "@type": "Person",
             "name": "STICKnoLOGIC",
-            "url": "{{ env("APP_URL") ."/about" }}"
+            "url": "{{ config("app.url") ."/about" }}"
         },
         "publisher": {
             "@type": "Organization",
@@ -23,7 +23,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "{{ env("APP_URL") . "/" . request()->path() }}"
+            "@id": "{{ config("app.url") . "/" . request()->path() }}"
         }'>
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($thought) || !$thought)

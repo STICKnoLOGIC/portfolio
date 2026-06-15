@@ -6,7 +6,7 @@
     jsonLd='"@type": "WebPage",
         "name": "Write With Us - STICKnoLOGIC",
         "description": "We are always looking for talented writers to contribute to our blog. If you have a passion for writing and want to share your knowledge with our audience, we would love to hear from you!",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}"'>
+        "url": "{{ config("app.url") . "/" . request()->path() }}"'>
     <section class="py-12 mx-auto max-w-7xl">
         <div class="container mx-auto px-4">
             <h1 class="text-6xl font-bold mb-6 text-center text-[var(--primary)]">Write With Us</h1>

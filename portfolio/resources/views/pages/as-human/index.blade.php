@@ -6,7 +6,7 @@
     jsonLd='"@type": "CollectionPage",
         "name": "As A Human - My Thoughts & Literature",
         "description": "Sharing my thoughts, experiences, and insights on various topics that matter to me.",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "mainEntity": {
             "@type": "ItemList",
             "name": "List of Writings",

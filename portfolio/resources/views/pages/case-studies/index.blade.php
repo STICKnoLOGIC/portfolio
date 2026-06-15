@@ -6,7 +6,7 @@
     jsonLd='"@type": "CollectionPage",
         "name": "Case Studies - STICKnoLOGIC",
         "description": "Explore detailed case studies of my most significant projects, showcasing the challenges faced, solutions implemented, and valuable lessons learned throughout my career.",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "image": "{{ asset("images/case-studies-og.jpg") }}",
         "mainEntity": {
             "@type": "ItemList",

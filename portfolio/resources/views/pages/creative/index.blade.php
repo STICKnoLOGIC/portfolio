@@ -6,7 +6,7 @@
     jsonLd='"@type": "CollectionPage",
         "name": "Creative Work - STICKnoLOGIC",
         "description": "Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity.",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "image": "{{ asset("images/creative-og.jpg") }}",
         "mainEntity": {
             "@type": "ItemList",

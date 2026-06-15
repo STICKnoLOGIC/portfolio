@@ -12,7 +12,7 @@ class ContentService
 
     public function __construct()
     {
-        $this->gh_url = env('CONTENT_GH_URL');
+        $this->gh_url = config('app.content_gh_url');
     }
 
     public function getCollection(string $type, bool $featured = false)

@@ -2,19 +2,19 @@
     description="{{ $project['excerpt'] ?? 'Discover my projects, showcasing a mix of web development, open-source contributions, and creative digital experiences.' }}"
     keywords="{{ $project['keywords'] ?? 'projects, web development, open-source, creative digital experiences' }}"
     author="STICKnoLOGIC"
-    image="{{ $project['cover'] ?? env('DEFAULT_IMG') }}"
+    image="{{ $project['cover'] ?? config('app.default_img') }}"
     jsonLd='"@type": "SoftwareApplication",
         "name": "{{ $project["title"] }}",
         "description": "{{ $project["excerpt"] }}",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "applicationCategory": "DesignApplication",
         "operatingSystem": "Web",
         "author": {
             "@type": "Person",
             "name": "STICKnoLOGIC",
-            "url": "{{ env("APP_URL")."/about" }}"
+            "url": "{{ config("app.url")."/about" }}"
         },
-        "screenshot": "{{ $project["cover"] ?? env("DEFAULT_IMG") }}"'>
+        "screenshot": "{{ $project["cover"] ?? config("app.default_img") }}"'>
 
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($project))

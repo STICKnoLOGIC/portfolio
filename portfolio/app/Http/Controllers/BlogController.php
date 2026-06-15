@@ -30,7 +30,7 @@ class BlogController extends Controller
                 "name" => $post['title'],
                 "url" => route('blog.show', $post['slug']),
                 "description" => $post['excerpt'] ?? null,
-                "image" => $post['cover'] ?? env('DEFAULT_IMG'),
+                "image" => $post['cover'] ?? config('app.default_img'),
             ];
         })->toArray();
 
@@ -61,7 +61,8 @@ class BlogController extends Controller
                 "name" => $post['title'],
                 "url" => route('blog.show', $post['slug']),
                 "description" => $post['excerpt'] ?? null,
-                "image" => $post['cover'] ?? env('DEFAULT_IMG'),
+                "image" => $post['cover'] ?? 
+                config('app.default_img'),
             ];
         })->toArray();
 
