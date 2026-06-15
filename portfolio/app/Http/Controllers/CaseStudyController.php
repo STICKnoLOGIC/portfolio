@@ -23,7 +23,7 @@ class CaseStudyController extends Controller
                     "name" => $caseStudy['title'],
                     "description" => $caseStudy['excerpt'] ?? null,
                     "url" => route('case-studies.show', $caseStudy['slug']),
-                    "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                    "image" => $caseStudy['cover'] ?? config('app.default_img'),
                 ]
             ];
         });
@@ -78,7 +78,7 @@ class CaseStudyController extends Controller
                     "name" => $caseStudy['title'],
                     "description" => $caseStudy['excerpt'] ?? null,
                     "url" => route('case-studies.show', $caseStudy['slug']),
-                    "image" => $caseStudy['cover'] ?? env('DEFAULT_IMG'),
+                    "image" => $caseStudy['cover'] ?? config('app.default_img'),
                 ]
             ];
         });

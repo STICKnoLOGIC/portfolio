@@ -2,21 +2,21 @@
     description="{{ $caseStudy['excerpt'] ?? 'Explore detailed case studies of my most significant projects, showcasing the challenges faced, solutions implemented, and valuable lessons learned throughout my career.' }}"
     keywords="{{ $caseStudy['tags'] ? implode(', ', $caseStudy['tags']) : 'Case Studies, Projects, Challenges, Solutions, Lessons Learned, Portfolio' }}"
     author="STICKnoLOGIC"
-    image="{{ $caseStudy['cover'] ?? env('DEFAULT_IMG') }}"
+    image="{{ $caseStudy['cover'] ?? config('app.default_img') }}"
     jsonLd='"@type": "CaseStudy",
         "name": "{{$caseStudy["title"]}}",
         "description": "{{ $caseStudy["excerpt"] }}",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
-        "image": "{{ $caseStudy["cover"] ?? env("DEFAULT_IMG") }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
+        "image": "{{ $caseStudy["cover"] ?? config("app.default_img") }}",
         "datePublished": "{{ Carbon\Carbon::parse($caseStudy["date"])->toIso8601String() }}",
         "author": {
             "@type": "Person",
             "name": "STICKnoLOGIC",
-            "url": "{{ env("APP_URL")."/about" }}"
+            "url": "{{ config("app.url")."/about" }}"
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "{{ env("APP_URL") . "/" . $caseStudy["slug"] }}"
+            "@id": "{{ config("app.url") . "/" . $caseStudy["slug"] }}"
         }'>
     <section class="max-w-6xl mx-auto px-6 py-24">
         @if(empty($caseStudy))

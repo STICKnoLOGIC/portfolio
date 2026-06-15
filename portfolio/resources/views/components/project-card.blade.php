@@ -1,6 +1,6 @@
 <div class="card-hover p-0 border border-[var(--secondary)] rounded-lg shadow-sm clip-path-card transition">
         <a href="{{ route('projects.show', $project['slug']) }}">
-            <img lazyload src="{{ $project['cover'] ?? env('DEFAULT_IMG') }}" alt="{{ $project['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
+            <img lazyload src="{{ $project['cover'] ?? config('app.default_img') }}" alt="{{ $project['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
         </a>
     <div class="p-4">
         <a href="{{ route('projects.show', $project['slug']) }}">

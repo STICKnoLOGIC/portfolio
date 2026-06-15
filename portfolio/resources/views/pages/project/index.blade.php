@@ -6,7 +6,7 @@
     jsonLd='"@type": "CollectionPage",
         "name": "Projects - STICKnoLOGIC",
         "description": "Here are some of my recent projects, showcasing a mix of web development, open-source contributions, and creative digital experiences. These projects reflect my passion for building practical tools and engaging web applications.",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "image": "{{ asset("images/projects-og.jpg") }}",
         "mainEntity": {
             "@type": "ItemList",

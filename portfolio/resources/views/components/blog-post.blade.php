@@ -1,6 +1,6 @@
 <div class="card-hover p-0 border border-[var(--secondary)] rounded-lg shadow-sm clip-path-card transition">
     <a href="{{ route('blog.show', $post['slug']) }}">
-        <img lazyload src="{{ $post['cover'] ?? env('DEFAULT_IMG') }}" alt="{{ $post['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
+        <img lazyload src="{{ $post['cover'] ?? config('app.default_img') }}" alt="{{ $post['title'] }} cover image" class="w-full h-48 object-cover rounded-md mb-4">
     </a>
     <div class="px-4 py-2">
     <a href="{{ route('blog.show', $post['slug']) }}" class="font-semibold hover:underline hover:underline-[var(--primary)] transition">

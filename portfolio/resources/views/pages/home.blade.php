@@ -6,7 +6,7 @@
     jsonLd='"@type": "WebPage",
         "name": "STICKnoLOGIC - Dev Portfolio",
         "description": "Welcome to my Developer portfolio website! I am STICKnoLOGIC, a passionate web developer and digital creator.",
-        "url": "{{ env("APP_URL") }}"'>
+        "url": "{{ config("app.url") }}"'>
     
     <x-hero />
 

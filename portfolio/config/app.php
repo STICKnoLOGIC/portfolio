@@ -1,7 +1,47 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Default Image URL
+    |--------------------------------------------------------------------------
+    | This value is the default image URL used for social media sharing and other
+    | purposes when a specific image is not provided. You can set this in your ".env" file.
+    |
+    */
 
+    'default_img' => env('DEFAULT_IMG', 'https://cdn.sticknologic.is-a.dev/picography-moon-craters.jpg'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Analytics Configuration
+    |--------------------------------------------------------------------------
+    | These values are used for umami analytics integration. You can set these in your ".env" file.
+    |
+    */
+    
+    'analytics_url' => env('ANALYTICS_URL'),
+
+
+    /*
+    /--------------------------------------------------------------------------
+    | Analytics Website ID
+    /--------------------------------------------------------------------------
+    | This value is the website ID used for umami analytics integration. You can set this in your ".env" file.
+    |
+    */  
+
+    "analytics_id" => env('ANALYTICS_WEBSITE_ID'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Content GitHub URL
+    |--------------------------------------------------------------------------
+    | This value is the base URL for fetching content from GitHub. You can set this in your ".env" file. Make sure to replace <github_username> and <branch> with your actual GitHub username and branch name.
+    |
+    */
+
+    'content_gh_url' => env('CONTENT_GH_URL', 'https://raw.githubusercontent.com/<github_username>/portfolio/<branch>/content'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -13,7 +53,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'STICKnoLOGIC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +105,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Manila',
 
     /*
     |--------------------------------------------------------------------------

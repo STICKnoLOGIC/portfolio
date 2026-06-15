@@ -2,17 +2,17 @@
     description="{{ $artwork['excerpt'] ?? 'Explore my creative work, including pixel art and digital illustrations. Discover game assets, character designs, and experimental art pieces that showcase my artistic skills and creativity.' }}"
     keywords="{{ $artwork['keywords'] ?? 'creative work, pixel art, digital illustrations, game assets, character designs, experimental art, portfolio' }}"
     author="STICKnoLOGIC"
-    image="{{ $artwork['cover'] ?? env('DEFAULT_IMG') }}"
+    image="{{ $artwork['cover'] ?? config('app.default_img') }}"
     jsonLd='"@type": "CreativeWork",
         "name": "{{ $artwork["title"] ?? "Creative Work - STICKnoLOGIC"}}",
         "description": "{{ $artwork["excerpt"] }}",
-        "image": "{{ $artwork["cover"] ?? env("DEFAULT_IMG") }}",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "image": "{{ $artwork["cover"] ?? config("app.default_img") }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "dateCreated": "{{ $artwork["date"] }}",
         "artist": {
             "@type": "Person",
             "name": "STICKnoLOGIC",
-            "url": "{{ env("APP_URL")."/about" }}"
+            "url": "{{ config("app.url")."/about" }}"
         },
         "artMedium": "{{ implode(", ", $artwork["medium"] ?? []) }}",
         "keywords": {!! json_encode($artwork["tags"], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) !!}'>

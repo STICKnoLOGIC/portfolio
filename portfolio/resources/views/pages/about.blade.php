@@ -6,7 +6,7 @@
     jsonLd='"@type": "ProfilePage",
         "name": "John Aerial J. Azcune (STICKnoLOGIC) - Web Developer & Digital Artist",
         "description": "Hi, I am John Aerial J. Azcune, also known as STICKnoLOGIC. I am a freelance web developer and digital artist who focuses on building practical tools, creative web experiences, and open-source projects.",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",
         "image": "https://github.com/sticknologic.png",
         "jobTitle": ["Website Developer", "Digital Artist"],
         "knowsAbout": [

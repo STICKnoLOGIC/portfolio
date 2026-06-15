@@ -6,7 +6,7 @@
     jsonLd='"@type": "Blog",
         "name": "Vlog - STICKnoLOGIC",
         "description": "Here I share insights, tutorials, and musings on design, development, and creativity. Whether you are a fellow developer, designer, or just curious about the world of tech, there is something here for everyone. Dive in and explore my latest posts!",
-        "url": "{{ env("APP_URL") . "/blog" }}",
+        "url": "{{ config("app.url") . "/blog" }}",
         "publisher": {
             "@type": "Person",
             "name": "STICKnoLOGIC"

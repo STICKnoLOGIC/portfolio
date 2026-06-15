@@ -2,12 +2,12 @@
     description="{{ $post['excerpt'] ?? 'Read this insightful blog post on design, development, and creativity. Explore the latest trends and tips in tech, programming, and web development.' }}"
     keywords="{{ $post['keywords'] ?? 'blog post, design, development, creativity, tech, programming, web development, software engineering' }}"
     author="{{ $post['author'] ?? 'Unknown Author' }}"
-    image="{{ $post['cover'] ?? env('DEFAULT_IMG') }}"
+    image="{{ $post['cover'] ?? config('app.default_img') }}"
     jsonLd='"@type": "BlogPosting",
         "headline": "{{ $post["title"] }}",
         "description": "{{ $post["excerpt"] }}",
-        "url": "{{ env("APP_URL") . "/" . request()->path() }}",    
-        "image": "{{ $post["cover"] ?? env("DEFAULT_IMG") }}",
+        "url": "{{ config("app.url") . "/" . request()->path() }}",    
+        "image": "{{ $post["cover"] ?? config("app.default_img") }}",
         "datePublished": "{{ \Carbon\Carbon::parse($post["date"])->toIso8601String() ?? now()->toIso8601String() }}",
         "author": {
             "@type": "Person",
