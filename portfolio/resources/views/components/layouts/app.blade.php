@@ -49,13 +49,11 @@
     @endif
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/cookie-consent/css/cookie-consent.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    @production
-        <script defer src="{{ config('app.analytics_url') }}" data-website-id="{{ config('app.analytics_website_id') }}"></script>
-    @endproduction
 </head>
 
-<body class="bg-zinc-950 text-zinc-300 antialiased dark">
+<body class="bg-zinc-950 text-zinc-300 antialiased" theme="dark">
 
     <x-navbar />
 
@@ -64,5 +62,41 @@
     </main>
 
     <x-footer />
+
+    <script src="{{ asset('vendor/cookie-consent/js/cookie-consent.js') }}"></script>
+    @production
+    <script>
+        function getCookieConsent() {
+            const name = '__cookie_consent=';
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return ''; 
+        }
+
+        const consentValue = getCookieConsent();
+        
+        const hasAnalyticsConsent = (consentValue === 'true' || consentValue === '2');
+
+        
+        if (!consentValue || hasAnalyticsConsent) {
+            var script = document.createElement('script');
+            script.defer = true;
+            script.src = '{{ config('app.analytics_url') }}'; // Replace with your Umami URL
+            script.setAttribute('data-website-id', '{{ config('app.analytics_website_id') }}'); // Replace with your ID
+            document.head.appendChild(script);
+        } else {
+        console.log('Umami analytics blocked due to user opt-out.');
+    }
+    </script>
+    @endproduction
 </body>
 </html>

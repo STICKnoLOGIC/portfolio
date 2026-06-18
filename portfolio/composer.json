@@ -17,6 +17,7 @@
         "predis/predis": "^3.5",
         "spatie/laravel-sitemap": "^8.1",
         "spatie/yaml-front-matter": "^2.1",
+        "statikbe/laravel-cookie-consent": "^1.12",
         "vdhicts/read-time": "^4.1"
     },
     "require-dev": {
