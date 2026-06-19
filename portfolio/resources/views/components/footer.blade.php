@@ -7,9 +7,9 @@
             Built with Laravel and Tailwind CSS.
         </p>
         <div class="mt-2 space-x-4 mx-auto text-center">
-            <a href="/terms-of-service" class="text-[var(--primary)] hover:underline">Terms of Service</a>
-            <a href="/privacy-policy" class="text-[var(--primary)] hover:underline">Privacy Policy</a>
-            <a href="/disclaimer" class="text-[var(--primary)] hover:underline">Disclaimer</a>
+            <a href="{{ route("legal.terms") }}" class="text-[var(--primary)] hover:underline">Terms of Service</a>
+            <a href="{{ route("legal.privacy") }}" class="text-[var(--primary)] hover:underline">Privacy Policy</a>
+            <a href="{{ route("legal.disclaimer") }}" class="text-[var(--primary)] hover:underline">Disclaimer</a>
         </div>
 
         {{-- Umami Opt-Out Link --}}

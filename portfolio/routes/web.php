@@ -6,6 +6,7 @@ use App\Http\Controllers\CaseStudyController;
 use App\Http\Controllers\CreativeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+Use App\Http\Controllers\LegalController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -17,6 +18,10 @@ Route::view('/write-with-us', 'pages.write-with-us')->name('write-with-us');
 Route::get('/up', function () {
     return response()->json(['status' => 'ok', 'timestamp' => now()]);
 });
+
+Route::get('/terms-of-service', [LegalController::class, 'termsOfService'])->name('legal.terms');
+Route::get('/privacy-policy', [LegalController::class, 'privacyPolicy'])->name('legal.privacy');
+Route::get('/disclaimer', [LegalController::class, 'disclaimer'])->name('legal.disclaimer');
 
 Route::get('/as-human', [AsHumanController::class, 'index'])->name('as-human');
 Route::get('/as-human/{slug}', [AsHumanController::class, 'show'])->name('as-human.show');
