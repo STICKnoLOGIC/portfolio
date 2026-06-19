@@ -39,7 +39,7 @@
             @if($caseStudy['tags'] && count($caseStudy['tags']))
                 <x-tags :tags="$caseStudy['tags']" route="case-studies.tags" />
             @endif
-            <div class="prose prose-invert max-w-none mt-6">
+            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none mt-6">
                 {!! $caseStudy['html'] !!}
             </div>
         @endif

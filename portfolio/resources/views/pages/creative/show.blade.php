@@ -43,7 +43,7 @@
                     @endif
                 </div>
             </div>
-            <div class="prose prose-invert max-w-none">
+            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none">
                 {!! $artwork['html'] !!}
             </div>
         @endif

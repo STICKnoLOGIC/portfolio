@@ -16,7 +16,7 @@
         "image": "{{ asset("images/legal-og-image.png") }}"
     }'
 >
-<section class="py-12 mx-auto max-w-7xl prose prose-invert prose-headings:text-[var(--secondary)] prose-links:text-blue-500 prose-strong:text-[var(--primary)] px-6">
+<section class="max-w-6xl mx-auto px-6 py-24 prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)]">
         {!! $content !!}
 </section>
 </x-layouts.app>

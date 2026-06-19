@@ -41,7 +41,7 @@
             @if($post['tags'] && count($post['tags']))
                 <x-tags :tags="$post['tags']" route="blog.tags" />
             @endif
-            <div class="prose prose-invert max-w-none">
+            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none">
                 {!! $post['html'] !!}
             </div>
 

@@ -39,7 +39,9 @@
                 </div>
             @endif
             </div>
-            <div class="text-zinc-200 my-8">{!! $author['html'] !!}</div >
+            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none my-8">
+                {!! $author['html'] !!}
+            </div>
             <h2 class="text-2xl font-bold my-6 text-[var(--primary)]">Posts by {{ $author['name'] }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                 @foreach($posts as $post)
