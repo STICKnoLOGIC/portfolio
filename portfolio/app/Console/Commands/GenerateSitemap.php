@@ -10,7 +10,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
 #[Signature('sitemap:generate')]
-#[Description('Command description')]
+#[Description('generate sitemap for the website')]
 class GenerateSitemap extends Command
 {
     /**
@@ -35,6 +35,9 @@ class GenerateSitemap extends Command
         $this->addUrls($sitemap, route('projects'), 0.9);
         $this->addUrls($sitemap, route('case-studies'), 0.9);
         $this->addUrls($sitemap, route('creative'), 0.9);
+        $this->addUrls($sitemap, route('legal.privacy'), 0.9);
+        $this->addUrls($sitemap, route('legal.terms'), 0.9);
+        $this->addUrls($sitemap, route('legal.disclaimer'), 0.9);
 
         foreach ($authors as $item){
             $this->addUrls($sitemap,route('blog.author',$item,0.7));
