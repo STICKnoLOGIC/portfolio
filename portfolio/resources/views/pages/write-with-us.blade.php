@@ -2,7 +2,7 @@
     description="We are always looking for talented writers to contribute to our blog. If you have a passion for writing and want to share your knowledge with our audience, we would love to hear from you!"
     keywords="write with us, contribute, blog, article submission, writing opportunities, become a contributor, share your knowledge, STICKnoLOGIC"
     author="STICKnoLOGIC"
-    image="{{ asset('images/write-with-us-og.jpg') }}"
+    image="{{ asset('images/write-with-us-og.png') }}"
     jsonLd='"@type": "WebPage",
         "name": "Write With Us - STICKnoLOGIC",
         "description": "We are always looking for talented writers to contribute to our blog. If you have a passion for writing and want to share your knowledge with our audience, we would love to hear from you!",

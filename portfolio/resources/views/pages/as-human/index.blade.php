@@ -2,7 +2,7 @@
     description="Sharing my thoughts, experiences, and insights on various topics that matter to me. From personal growth and mental health to technology and creativity, this is where I express myself as a human being." 
     keywords="as a human, thoughts, experiences, insights, personal growth, mental health, technology, creativity" 
     author="STICKnoLOGIC" 
-    image="{{ asset('images/as-human-og.jpg') }}"
+    image="{{ asset('images/as-human-og.png') }}"
     jsonLd='"@type": "CollectionPage",
         "name": "As A Human - My Thoughts & Literature",
         "description": "Sharing my thoughts, experiences, and insights on various topics that matter to me.",

@@ -2,12 +2,12 @@
     description="Explore detailed case studies of my most significant projects, showcasing the challenges faced, solutions implemented, and valuable lessons learned throughout my career."
     keywords="Case Studies, Projects, Challenges, Solutions, Lessons Learned, Portfolio"
     author="STICKnoLOGIC"
-    image="{{ asset('images/case-studies-og.jpg') }}"
+    image="{{ asset('images/case-studies-og.png') }}"
     jsonLd='"@type": "CollectionPage",
         "name": "Case Studies - STICKnoLOGIC",
         "description": "Explore detailed case studies of my most significant projects, showcasing the challenges faced, solutions implemented, and valuable lessons learned throughout my career.",
         "url": "{{ config("app.url") . "/" . request()->path() }}",
-        "image": "{{ asset("images/case-studies-og.jpg") }}",
+        "image": "{{ asset("images/case-studies-og.png") }}",
         "mainEntity": {
             "@type": "ItemList",
             "itemListElement": {!! json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!} 

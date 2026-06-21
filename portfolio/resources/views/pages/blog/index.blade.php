@@ -2,7 +2,7 @@
     description="Welcome to my blog! Here I share insights, tutorials, and musings on design, development, and creativity. Whether you're a fellow developer, designer, or just curious about the world of tech, there's something here for everyone. Dive in and explore my latest posts!"
     keywords="blog, design, development, creativity, tutorials, insights, tech, programming, web development, software engineering"
     author="STICKnoLOGIC"
-    image="{{ asset('images/blog-og.jpg') }}"
+    image="{{ asset('images/blog-og.png') }}"
     jsonLd='"@type": "Blog",
         "name": "Vlog - STICKnoLOGIC",
         "description": "Here I share insights, tutorials, and musings on design, development, and creativity. Whether you are a fellow developer, designer, or just curious about the world of tech, there is something here for everyone. Dive in and explore my latest posts!",

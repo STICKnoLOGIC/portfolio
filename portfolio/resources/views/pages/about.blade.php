@@ -2,7 +2,7 @@
     description="Hi, I'm John Aerial J. Azcune, also known as STICKnoLOGIC. I'm a web developer and pixel artist who focuses on building practical tools, creative web experiences, and open-source projects. Since starting my GitHub journey in 2020, I've been consistently exploring development through personal projects, game jams, and community contributions."
     keywords="web development, digital art, pixel art, open source, Laravel, PHP, JavaScript, Aseprite, Photoshop, game jams, front-end, full-stack, GitHub, John Aerial J. Azcune, STICKnoLOGIC, is-a.dev, First Accord, Payus-as-a-Service, Aseprite Builder, snl-typed-js, laravel-ui-lockout, 1-Point-View-Perspective-Guide-Line"
     author="STICKnoLOGIC"
-    image="{{ asset('images/about-og.jpg') }}"
+    image="{{ asset('images/about-og.png') }}"
     jsonLd='"@type": "ProfilePage",
         "name": "John Aerial J. Azcune (STICKnoLOGIC) - Web Developer & Digital Artist",
         "description": "Hi, I am John Aerial J. Azcune, also known as STICKnoLOGIC. I am a freelance web developer and digital artist who focuses on building practical tools, creative web experiences, and open-source projects.",
