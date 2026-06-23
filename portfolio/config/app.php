@@ -23,6 +23,23 @@ return [
     'analytics_url' => env('ANALYTICS_URL'),
 
 
+    /*    |--------------------------------------------------------------------------
+    | OPNForm Contact Us URL
+    |--------------------------------------------------------------------------
+    | This value is the URL for the OPNForm contact us form. You can set this in your ".env" file.
+    |
+    */
+    'opnform_contact_us' => env('OPNFORM_CONTACT_US', 'https://opnform.com/forms/demo-form-new-features-bhw3sk'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | OPNForm Write With Us URL
+    |--------------------------------------------------------------------------
+    | This value is the URL for the OPNForm write with us form. You can set this in your ".env" file.
+    |
+    */
+    'opnform_write_with_us' => env('OPNFORM_WRITE_WITH_US', 'https://opnform.com/forms/demo-form-new-features-bhw3sk'),
+
     /*
     /--------------------------------------------------------------------------
     | Analytics Website ID

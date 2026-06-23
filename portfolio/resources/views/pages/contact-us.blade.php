@@ -8,12 +8,7 @@
         "description": "Have questions, feedback, or just want to say hello? We would love to hear from you! Whether you are interested in collaborating, have a suggestion for our content, or simply want to connect, feel free to reach out. Your thoughts and inquiries are always welcome!",
         "url": "{{ config("app.url") . "/" . request()->path() }}"'>
     <section class="max-w-6xl mx-auto mb-4 p-6">
-        <x-section-title :id=null
-            title="Contact Us"
-            subtitle="Have questions, feedback, or just want to say hello? We'd love to hear from you! Whether you're interested in collaborating, have a suggestion for our content, or simply want to connect, feel free to reach out. Your thoughts and inquiries are always welcome!"
-        />  
-    <img src="https://github.com/STICKnoLOGIC/STICKnoLOGIC/blob/main/static/contact.webp?raw=true" alt="Contact Us" class="w-full h-auto rounded-lg shadow-md mt-6">
-    <p class="text-center text-gray-400 mt-4">Feel free to reach out to us with any questions, comments, or inquiries. We're here to help and would love to hear from you!</p>
+        <iframe style="border:none;width:100%;height:700px;max-height:90vh;" id="contact-us-snl" src="{{ config('app.opnform_contact_us')}}"></iframe>
     <div class="flex flex-wrap justify-center items-center gap-6 mt-8">
         <a href="mailto:JohnAerial.Azcune@sticknologic.is-a.dev" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-orange-500 transition"><i class="fas fa-envelope mr-2"></i><span class="hidden md:inline"> Email Us</span></a>
         <a href="https://snl.is-a.dev/linkedin" target="_blank" class="bg-[var(--primary)] text-white px-4 py-2 rounded hover:bg-orange-500 transition"><i class="fab fa-linkedin mr-2"></i><span class="hidden md:inline"> LinkedIn</span></a>
