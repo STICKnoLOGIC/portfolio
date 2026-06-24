@@ -1,5 +1,22 @@
 [
   {
+    "title": "PayUs-as-a-Service",
+    "excerpt": "an API that returns randomized messages for past-due invoices",
+    "date": "2026-06-25",
+    "slug": "payus-as-a-service",
+    "featured": true,
+    "link": "https://github.com/sticknologic/payus-as-a-service",
+    "demo": "https://puaas.sticknologic.is-a.dev",
+    "cover": "https://cdn.sticknologic.is-a.dev/payus-aas/banner.png",
+    "technologies": [
+      "Nodejs",
+      "Expressjs",
+      "Html",
+      "CSS",
+      "Javascript"
+    ]
+  },
+  {
     "title": "First Accord",
     "excerpt": "Make Your First Contribution in Github.",
     "date": "2026-06-13",
