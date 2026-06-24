@@ -22,10 +22,6 @@ First Accord is an open source project designed to help beginners dive into cont
 ## Where to Start?
 You can start by reading our [Documentation](https://first-accord.js.org/docs) and our [Getting Started](https://first-accord.js.org/docs/#/getting-started)
 
-## Challenges & Solutions
-**Q** : What are the Best Stack even the beginner that have little knowledge?
-- **Answer** : The basic and fundamental of web developmentz, **HTML, CSS, ans Javascript** and unknowingly, the user are already expose to simple Json schema thru the third party APIs they are using
-
 ## Results & Impact
 - We register the repo on the official HacktoberFest website this October 2025
 - as of writing this (June 13, 2026), the repo already have 8 stars and 16 contributor and still counting
