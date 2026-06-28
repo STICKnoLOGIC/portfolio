@@ -49,6 +49,7 @@
     @endif
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script src="{{ asset('vendor/cookie-consent/js/cookie-consent.js') }}"></script>
     <link rel="stylesheet" type="text/css" href="{{asset("vendor/cookie-consent/css/cookie-consent.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -63,7 +64,6 @@
 
     <x-footer />
 
-    <script src="{{ asset('vendor/cookie-consent/js/cookie-consent.js') }}"></script>
     @production
     <script>
         function getCookieConsent() {
@@ -91,7 +91,7 @@
             var script = document.createElement('script');
             script.defer = true;
             script.src = '{{ config('app.analytics_url') }}'; // Replace with your Umami URL
-            script.setAttribute('data-website-id', '{{ config('app.analytics_website_id') }}'); // Replace with your ID
+            script.setAttribute('data-website-id', '{{ config('app.analytics_id') }}'); // Replace with your ID
             document.head.appendChild(script);
         } else {
         console.log('Umami analytics blocked due to user opt-out.');
