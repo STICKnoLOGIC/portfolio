@@ -20,10 +20,6 @@ PayUs-as-a-Service (PUaaS) is an API that returns randomized messages for past-d
 
 Built for thick-faced, ghost, and shameless clients.
 
-
-## Where to Start?
-You can start by reading our [Documentation](https://first-accord.js.org/docs) and our [Getting Started](https://first-accord.js.org/docs/#/getting-started)
-
 ## API Usage
 
 **Live API:** https://puaas.sticknologic.is-a.dev
@@ -35,15 +31,15 @@ You can start by reading our [Documentation](https://first-accord.js.org/docs) a
 **Rate Limit:** `60 requests per minute per IP`
 
 ### API Endpoints
-| Method | Endpoint            | Auth | Description                             | Rate Limit |
-|--------|---------------------|------|-----------------------------------------|------------|
-| GET    | /payus              | No   | Get a randomized message in random tone | 60/min     |
-| GET    | /payus/professional | No   | Get random professional message         | 60/min     |
-| GET    | /payus/frank        | No   | Get random frank message                | 60/min     |
-| GET    | /payus/friendly     | No   | Get random friendly message             | 60/min     |
-| GET    | /payus/playful      | No   | Get random playful message              | 60/min     |
-| GET    | /payus/funny        | No   | Get random funny message                | 60/min     |
-| GET    | /payus/tones        | No   | Get available tones                     | 60/min     |
+| Method   | Endpoint             | Auth   | Description                               | Rate Limit   |
+| -------- |--------------------- | ------ | ----------------------------------------- | ------------ |
+| GET      | /payus               | No     | Get a randomized message in random tone   | 60/min       |
+| GET      | /payus/professional  | No     | Get random professional message           | 60/min       |
+| GET      | /payus/frank         | No     | Get random frank message                  | 60/min       |
+| GET      | /payus/friendly      | No     | Get random friendly message               | 60/min       |
+| GET      | /payus/playful       | No     | Get random playful message                | 60/min       |
+| GET      | /payus/funny         | No     | Get random funny message                  | 60/min       |
+| GET      | /payus/tones         | No     | Get available tones                       | 60/min       |
 
 ## Contributing
 
