@@ -20,14 +20,14 @@
             subtitle="In addition to web development, I also create pixel art and digital illustrations. Below are some of my recent creative projects, which include game assets, character designs, and experimental art pieces."
         />
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6">
-            @if($artworks && count($artworks))
+        @if($artworks && count($artworks))
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6">
                 @foreach($artworks as $artwork)
                     <x-artwork-card :artwork="$artwork" />
                 @endforeach
-            @else
-                <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8">No artworks found.</h1>
-            @endif
-        </div>
+            </div>
+        @else
+            <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8">No artworks found.</h1>
+        @endif
     </section>
 </x-layouts.app>

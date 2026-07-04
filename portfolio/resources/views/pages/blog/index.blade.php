@@ -19,16 +19,16 @@
             subtitle="Welcome to my blog! Here I share insights, tutorials, and musings on design, development, and creativity. Whether you're a fellow developer, designer, or just curious about the world of tech, there's something here for everyone. Dive in and explore my latest posts!"
         />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            @if($posts && count($posts))
+        @if($posts && count($posts))
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                 @foreach($posts as $post)
                     <x-blog-post :post="$post" />
                 @endforeach
-            @else
-                <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8">No blog posts found.</h1>
-            @endif
+            </div>
+        @else
+            <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8 ">No blog posts found.</h1>
+        @endif
 
-        </div>
 
         <div class="mt-10">
             {{ $posts->links() }}

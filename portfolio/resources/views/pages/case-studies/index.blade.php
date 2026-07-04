@@ -17,14 +17,14 @@
             title="Case Studies"
             subtitle="In-depth looks at some of my most significant projects, detailing the challenges faced, solutions implemented, and lessons learned along the way."
         />
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6">
-            @if($caseStudies && count($caseStudies))
+        @if($caseStudies && count($caseStudies))
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6">
                 @foreach($caseStudies as $caseStudy)
                     <x-case-study-card :caseStudy="$caseStudy"/>
-            @endforeach
-            @else
-                <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8">No case studies found.</h1>
-            @endif
-        </div>
+                @endforeach
+            </div>
+        @else
+            <h1 class="text-2xl font-bold text-center text-[var(--primary)] w-full mt-8">No case studies found.</h1>
+        @endif
     </section>
 </x-layouts.app>
