@@ -42,7 +42,7 @@
                 @if($project['technologies'] && count($project['technologies']))
                     <x-tags :tags="$project['technologies']" route="projects.technologies" />
                 @endif
-                <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none mt-6">
+                <div class="prose prose-invert max-w-none prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] prose-table:overflow-x-auto prose-table:whitespace-no-wrap prose-table:block prose-table:max-w-full mt-6">
                     {!! $project['html'] !!}
                 </div>
             </div>

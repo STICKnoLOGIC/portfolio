@@ -39,7 +39,7 @@
                 </div>
             @endif
             </div>
-            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none my-8">
+            <div class="prose prose-invert prose-headings:text-[var(--secondary)] prose-a:text-[#FFDAB9] prose-strong:text-[var(--primary)] max-w-none prose-table:overflow-x-auto prose-table:whitespace-no-wrap prose-table:block prose-table:max-w-full my-8">
                 {!! $author['html'] !!}
             </div>
             <h2 class="text-2xl font-bold my-6 text-[var(--primary)]">Posts by {{ $author['name'] }}</h2>
