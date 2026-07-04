@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Http;
 use League\CommonMark\CommonMarkConverter;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use DonatelloZa\RakePlus\RakePlus;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class ContentService
 {
@@ -102,10 +103,20 @@ class ContentService
     {
         $document = YamlFrontMatter::parse($content);
 
-        $converter = new CommonMarkConverter();
+        $cachedkey = 'content-cache.parsed.'.$document->matter('date').'-'.$document->matter('title');
+
+        if(Cache::has($cachedkey)) {
+            $converted = Cache::get($cachedkey);
+        }else{
+            $converted = Markdown::convert($document->body())->getContent();
+            Cache::put($cachedkey, $converted, now()->addMinutes(60));
+        }
         
-        $keywords = RakePlus::create(strip_tags($converter->convert($document->body())), 'en_US')->sortByScore('desc')->get();
+
+        $keywords = RakePlus::create(strip_tags($converted), 'en_US')->sortByScore('desc')->get();
+
         
+
         return [
             'title' => $document->matter('title'),
             'slug' => $document->matter('slug'),
@@ -122,9 +133,8 @@ class ContentService
             'medium' => $document->matter('medium'),
             'keywords' => $keywords? implode(', ', $keywords) : null,
             'name' => $document->matter('name'),
-            'html' => $converter->convert(
-                $document->body()
-            ),
+            'html' => $converted,
+            // 'toc' => $toc
         ];
     }
 

@@ -59,6 +59,16 @@ return [
     */
 
     'content_gh_url' => env('CONTENT_GH_URL', 'https://raw.githubusercontent.com/<github_username>/portfolio/<branch>/content'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Torchlight Token
+    |--------------------------------------------------------------------------
+    | This value is the API token used for Torchlight integration. You can set this in your ".env" file.
+    |
+    */
+    'torchlight_token' => env('TORCHLIGHT_TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
