@@ -49,8 +49,9 @@
     @endif
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="{{ asset('vendor/cookie-consent/js/cookie-consent.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset("vendor/cookie-consent/css/cookie-consent.css")}}">
+    <link rel="preconnect" href="https://cdn.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.sticknologic.is-a.dev" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://cdn.sticknologic.is-a.dev/cookie-consent/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 

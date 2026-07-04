@@ -13,7 +13,7 @@
         </div>
 
         {{-- Umami Opt-Out Link --}}
-        <a href="javascript:void(0)" class="js-lcc-settings-toggle underline text-[var(--secondary)] mt-4 inline-block">
+        <a href="javascript:void(0)" class="js-lcc-settings-toggle underline text-[var(--secondary)] mt-4 inline-block" rel="nofollow">
             Analytic Settings
         </a>
         
