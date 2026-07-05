@@ -1,2 +1,59 @@
+# Dear robots:
+# This file exists to stop bad computers from making bad decisions.
+# If you are a good computer, please follow the rules of this file and let the bad computers be confused by it.
+# Thank you.
+# - STICKnoLOGIC, the site owner
+
+
+User-agent: Googlebot
+Disallow: 
+User-agent: googlebot-image
+Disallow: 
+User-agent: googlebot-mobile
+Disallow: 
+User-agent: ClaudeBot
+Disallow: 
 User-agent: *
-Disallow:
+Content-Signal: search=yes,ai-train=no
+Disallow: /
+Disallow: /cgi-bin/
+Sitemap: https://sticknologic.is-a.dev/sitemap.xml
+
+
+
+#````````````````````````````````````````````````````````````````````````````````
+#``````````````````````````````///|HHHHHHHHHZ///'````````````````````````````````
+#```````````````````````````s@@Ñ@@Ñ@@@@@@@@@@@@@@Ñ@``````````````````````````````
+#````````````````````````_JH@@@@ÑÑ@@@@Ñ@@@@@@@@Ñ@@@@F?-``````````````````````````
+#``````````````````````xJ@@@@@@@@@@@@@@@@@@@@@@@@@@@@@Os`````````````````````````
+#`````````````````````fK@@@@@@@@@@@Ñ@@@@@@@@@@@@@@@@@@@@Q(```````````````````````
+#````````````````````KÑ@@@@Ñ@@@@ÑÑ@@@@@@@@@@@@@@@@@@@@@@@Kc``````````````````````
+#``````````````````!kmIxxxxxxxxxxxxxmÑ@@@@KYxxxxxxxxxxxxxSXj`````````````````````
+#``````````````````)m`yfffffffffffff`U@@@m)?fffffffffffff"sU`````````````````````
+#``````````````````(A`yffffffhJYCCYJ`I}*Vs+[CYJYCCfffffff"sU`````````````````````
+#``````````````````(A`yfhhjYCYCjJYYC`j1``E/]JjCYYJjYYChff"sU`````````````````````
+#`````````````````````yfffffffffffff`Yr``A(?fffffffffffff"```````````````````````
+#````````````````````]sTTTTTTTTTTTTTKHr```FUTTTTTTTTTTTTTl!``````````````````````
+#`````````````````````]fK@@@@@Ñ@@@@@@Kf]``|U@@@Ñ@@@@Ñ@@@s^```````````````````````
+#``````````````````````-/jKÑ@@@@@@@@@@mY```s@@@@@@@@@Py:`````````````````````````
+#`````````````````````````-hm@@@@@@@@@ÑKP``.}@@@@@Ñ@}.```````````````````````````
+#```````````````````````````'!!XXXAÑÑÑÑKA-``/XXXL((``````````````````````````````
+#````````````````````````````````)rlllllll'``````````````````````````````````````
+#````````````````````````````'||UAAAAAAAAAAr```{|{```````````````````````````````
+#`````````````````````````"sFPHHKÑÑÑÑÑÑÑÑÑÑAj``_sAww?'```````````````````````````
+#```````````````````````(A```x@@Ñ@@@@@Ñ@@@@@#A```x@@@@U``````````````````````````
+#````````````````````-Irx``vw@@@@@@@Ñ@Ñ@@@@@@@Ax.``mÑ@@@J/-``````````````````````
+#``````````````````^rAT(``sO@@@@Ñ@@@Ñ@@@@@@@ÑÑ@Kf]``|sJ@@@U|`````````````````````
+#`````````````````*rAA(```@@@@@@@@@@@@@@@@Ñ@@@@@ÑKX[:``:YYPP?````````````````````
+#````````````````JXAAA(```Ñ@@Ñ@@@Ñ@@@@@@@@@@@@@@Ñ@@ÑOPJ```.--K)``````````````````
+#````````````````JPPPPh[``(SmmmmmmmmmmmmmmmmmmmmmmmmmmQHJJ[``````````````````````
+#````````````````````````````````````````````````````````````````````````````````
+#``````"]llllllllllllllllllllllllllll?]]]]]]illllllllllllllllllllllllllll]"``````
+#````````^]1lllllllllllllllllllllllll{x}((|i[|lllllllllllllllllllllllll]^````````
+#```````````x|llllllllllllllllllllll(v1]Y(1?{llllllllllllllllllllllll[```````````
+#````````````_!?lllllllllllllllllllll{{[((|1i?llllllllllllllllllll1/:````````````
+#```````````````"]1llllllllllllllllll{}||||}{llllllllllllllllllli/```````````````
+#````````````````.^x|llllllllllllllll{}???c|{lllllllllllllllll[*.````````````````
+#````````````````````?1llllllllllllll{}])))({llllllllllllllll````````````````````
+#`````````````````````_(1llllllllllll|[xxxx[|llllllllllll1)_`````````````````````
+#```````````````````````-********************************-```````````````````````

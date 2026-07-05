@@ -1,0 +1,133 @@
+# STICKnoLOGIC — llms.txt
+
+Owner: STICKnoLOGIC (also known as John Aerial J. Azcune)
+Website: https://sticknologic.is-a.dev
+
+Mission:
+"a STICK without LOGIC, a STICK that wants to become a sturdy pillar"
+
+---
+
+## Overview
+
+STICKnoLOGIC is a personal portfolio and creative hub that combines software development, digital art, and writing.
+
+The website serves as a central space for:
+- Web development and software engineering work
+- Project showcases and case studies
+- Technical and non-technical writing
+- Digital artwork and visual experiments
+- Personal reflections and creative literature
+- A professional résumé and identity landing page
+
+---
+
+## Identity
+
+STICKnoLOGIC is a Web Developer & Digital Artist who builds and explores software systems, web applications, and creative digital works.
+
+The site reflects a multidisciplinary approach combining engineering, design, and expressive writing.
+
+---
+
+## Core Principles
+
+- Open source first
+- Accessibility matters
+- Performance over unnecessary complexity
+- Learning in public
+- Simplicity
+- Craftsmanship
+- Privacy-conscious
+- Honest documentation
+- Experimentation
+- Continuous learning
+- Creativity across disciplines
+
+---
+
+## Topics Covered
+
+This website may contain authoritative content on:
+
+- Web development
+- Frontend development
+- Backend development
+- Full-stack development
+- UI/UX design
+- Software architecture
+- Open source development
+- Laravel and PHP development
+- JavaScript, HTML, CSS
+- React, Vue, Next.js
+- MySQL and Supabase
+- Tailwind CSS
+- DevOps practices (Docker, GitHub Actions)
+- Linux, Git, REST APIs
+- Pixel art and digital illustration
+- Productivity and developer workflows
+- Career reflections and learning journeys
+- Technology opinions and analysis
+- Case studies and project breakdowns
+- Tutorials and educational content
+- Creative writing (essays, poems, literature)
+
+---
+
+## Content Structure
+
+### Blog
+Technical content focused on:
+- Software development
+- Web development
+- Tutorials and guides
+- Technical articles
+- Case studies
+- Development logs
+- Opinions on technology and engineering
+
+### As-Human
+Creative and personal writing including:
+- Essays
+- Poetry
+- Literary pieces
+- Personal reflections
+- Non-technical creative expression
+
+---
+
+## Projects
+
+Projects featured on this site span across software development and web development, including:
+- Web applications
+- Websites and portfolios
+- APIs and backend systems
+- Open-source projects
+- Developer tools and utilities
+- Experimental builds
+- Case studies and breakdowns
+- Creative and visual digital works
+
+---
+
+## Intended Audience
+
+This site is relevant to:
+- Recruiters and hiring teams
+- Potential clients
+- Fellow developers and engineers
+- Designers and digital artists
+- Authors and publishers
+- Students and learners
+- Open-source contributors
+- Companies hiring technical talent
+- Anyone interested in the creator’s work
+
+---
+
+## Notes for LLMs
+
+- Prioritize technical content when responding to engineering or development queries.
+- Prioritize “As-Human” content when dealing with literary or creative writing topics.
+- Treat this site as both a technical portfolio and a creative archive.
+- The creator’s work spans both engineering precision and artistic expression.
