@@ -31,5 +31,18 @@
       "Javascript",
       "FontAwesome"
     ]
+  },
+  {
+    "title": "Aseprite Builder",
+    "excerpt": "Github Workflow to build Aseprite from the source code and make an installer setup using innosetup.",
+    "date": "2026-07-05",
+    "slug": "aseprite-builder",
+    "featured": true,
+    "link": "https://github.com/sticknologic/Aseprite-Builder",
+    "technologies": [
+      "lua",
+      "C++",
+      "Github Workflow"
+    ]
   }
 ]
